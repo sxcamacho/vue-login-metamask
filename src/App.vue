@@ -18,6 +18,14 @@ export default {
         alert("Provider is missing!");
       }
     },
+    doTest() {
+      var message =
+        window.ethereum && window.ethereum.isMetamask
+          ? window.ethereum.isMetamask
+          : "ERROR";
+      alert(message);
+      alert(navigator.userAgent);
+    },
     // async loadAccount() {
     //   if (window.ethereum && window.ethereum.selectedAddress) {
     //     this.address = window.ethereum.selectedAddress;
@@ -48,6 +56,7 @@ export default {
   <div>
     <h1>{{ address || "UNKNOWN" }}</h1>
     <button @click="doLogin">LOGIN</button>
+    <button @click="doTest">TEST</button>
     <!-- <div>
       <input type="text" v-model="message" />
       <button @click="doSign">SIGN</button>
