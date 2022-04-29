@@ -19,6 +19,7 @@ export default {
       }
     },
     doTest() {
+      alert(window ? "window OK" : "window NO");
       var message =
         window.ethereum && window.ethereum.isMetamask
           ? window.ethereum.isMetamask
