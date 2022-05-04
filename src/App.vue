@@ -24,7 +24,8 @@ export default {
       }
     },
     doTestPopup() {
-      window.open("https://moonpay.com");
+      alert(1);
+      window.open(this.url1);
     },
     doTest() {
       // alert(window ? "window OK" : "window NO");
