@@ -7,6 +7,11 @@ export default {
       address: null,
     };
   },
+  computed: {
+    url1: function () {
+      return "https://moonpay.com";
+    },
+  },
   methods: {
     async doLogin() {
       if (window.ethereum) {
@@ -17,6 +22,9 @@ export default {
       } else {
         alert("Provider is missing!");
       }
+    },
+    doTestPopup() {
+      window.open("https://moonpay.com");
     },
     doTest() {
       // alert(window ? "window OK" : "window NO");
@@ -79,6 +87,11 @@ export default {
     <h1>{{ address || "UNKNOWN" }}</h1>
     <button @click="doLogin">LOGIN</button>
     <button @click="doTest">TEST</button>
+
+    <a :href="url1" target="_blank" rel="noreferrer noopener"
+      >test url dinamica</a
+    >
+    <button @click="doTestPopup">test popup</button>
     <!-- <div>
       <input type="text" v-model="message" />
       <button @click="doSign">SIGN</button>
