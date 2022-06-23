@@ -1,5 +1,5 @@
 <script>
-// import Web3 from "web3";
+import BrowserMixin from "./BrowserMixin";
 export default {
   data() {
     return {
@@ -7,11 +7,7 @@ export default {
       address: null,
     };
   },
-  computed: {
-    url1: function () {
-      return "https://moonpay.com";
-    },
-  },
+  mixins: [BrowserMixin],
   methods: {
     async doLogin() {
       if (window.ethereum) {
@@ -24,18 +20,12 @@ export default {
       }
     },
     doTestPopup() {
-      alert(1);
-      window.open(this.url1);
+      alert("isMetamask: " + this.isMetamask);
+      alert("hasMetamask: " + this.hasMetaMask);
+      alert("window.ethereum: " + window.ethereum);
+      alert("isMobileDevice: " + this.isMobileDevice);
     },
     doTest() {
-      // alert(window ? "window OK" : "window NO");
-      // var message =
-      //   window.ethereum && window.ethereum.isMetamask
-      //     ? window.ethereum.isMetamask
-      //     : "ERROR";
-      // alert(message);
-      // alert(navigator.userAgent);
-
       if (window.ethereum) {
         handleEthereum();
       } else {
