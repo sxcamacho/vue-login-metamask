@@ -3,7 +3,7 @@ import BrowserMixin from "./BrowserMixin";
 export default {
   data() {
     return {
-      challenge: "123456",
+      challenge: "1234567",
       address: null,
     };
   },
